@@ -1,0 +1,6 @@
+com/canhub/cropper/databinding/CropImageActivityBinding.java
+ com.canhub.cropper.databinding.CropImageActivityBinding
+com/canhub/cropper/BuildConfig.java
+ com.canhub.cropper.BuildConfig
+com/canhub/cropper/databinding/CropImageViewBinding.java
+ com.canhub.cropper.databinding.CropImageViewBinding

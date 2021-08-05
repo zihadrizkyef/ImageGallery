@@ -1,0 +1,57 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-parcelize'
+apply from: 'versions.gradle'
+
+group='com.github.Canato'
+
+android {
+    compileSdk 30
+
+    defaultConfig {
+        minSdk 21
+        targetSdk 30
+        versionCode 1
+        versionName "1.0"
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    lintOptions {
+        abortOnError false
+    }
+    buildFeatures {
+        viewBinding true
+    }
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+    testOptions {
+        unitTests {
+            includeAndroidResources = true
+        }
+    }
+}
+
+dependencies {
+    api "androidx.appcompat:appcompat:$androidXAppCompatVersionCropper"
+
+    implementation "androidx.activity:activity-ktx:$androidXActivity"
+
+    implementation "androidx.exifinterface:exifinterface:$androidXExifVersion"
+    implementation "androidx.core:core-ktx:$androidXCoreKtxVersion"
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlinVersion"
+    implementation "androidx.lifecycle:lifecycle-runtime-ktx:$androidXLifeCycleVersion"
+
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-core:$coroutinesVersion"
+    implementation "org.jetbrains.kotlinx:kotlinx-coroutines-android:$coroutinesVersion"
+
+    testImplementation "junit:junit:$junitVersion"
+    testImplementation "androidx.test.ext:junit:$androidXJunitVersion"
+    testImplementation "androidx.test:core:$androidXTestVersion"
+    testImplementation "androidx.test:runner:$androidXTestVersion"
+    debugImplementation "androidx.fragment:fragment-testing:$androidXFragmentVersion"
+    testImplementation "org.robolectric:robolectric:$robolectricVersion"
+}
